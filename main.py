@@ -1,5 +1,5 @@
-print("welcome to tic tac toe")
-
+print("welcome to TicTactToe")
+# cells of the TicTacToe game
 Cells = ['o', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 player = 1
@@ -19,6 +19,7 @@ def PrintGrid():
     print("     |     |     ")
 
 
+# winning conditions
 def hasWon():
     if Cells[1] == Cells[2] == Cells[3]:
         return True
@@ -38,11 +39,14 @@ def hasWon():
     else:
         return -1
 
-    # Main
+# Main
+# Beginning of the main Function
 
 
 player = player % 2
 check = -1
+
+# only ends when check changes which is returned by the hasWon function
 while check == -1:
     PrintGrid()
     if player % 2:
@@ -84,10 +88,10 @@ while check == -1:
     check = hasWon()
 
 PrintGrid()
-
+# winner winner
 if check == 1:
     print("Player ", end="")
     print(player - 1, end="")
     print(" won!", end="")
 else:  # Otherwise, it's a tie
-    print("Woah! That's a tie!")
+    print("It's a tie no one has won")
